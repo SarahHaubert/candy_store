@@ -11,6 +11,11 @@ const addUser = "INSERT INTO users (name, type) VALUES ($1, $2)";
 const removeUser = "DELETE FROM users WHERE id = $1";
 const findUser = "SELECT * FROM users WHERE name = $1";
 
+const getOrders = "SELECT * FROM orders";
+const getOrderById = "SELECT * FROM orders WHERE id = $1";
+const newOrder = "INSERT INTO orders (customer_id, total) VALUES ($1, $2)";
+const removeOrder = "DELETE FROM orders WHERE id = $1";
+
 module.exports = {
     getCandy,
     getCandyById,
@@ -21,5 +26,8 @@ module.exports = {
     addUser,
     removeUser,
     findUser,
-
+    getOrders,
+    getOrderById,
+    newOrder,
+    removeOrder,
 };

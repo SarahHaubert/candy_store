@@ -1,6 +1,6 @@
-const { types } = require('pg');
+//const { types } = require('pg');
 const pool = require('./db');
-const queries = require('./queries')
+
 
 async function clerkAuth(req, res, next) {
     console.log(req.body)
@@ -14,14 +14,13 @@ async function clerkAuth(req, res, next) {
       );
       
       if (type.rows[0]["type"] == "clerk") {
-    
-          console.log("we did it!")
+  
           next();
       }
         
       
      else  {
-         console.log("user is not a clerk")
+         res.status(403).send("user is not a clerk")
      }
 }; 
 
@@ -38,14 +37,12 @@ async function makerAuth(req, res, next) {
       );
       
       if (type.rows[0]["type"] == "candy maker") {
-    
-          console.log("we did it!")
           next();
       }
         
       
      else  {
-         console.log("user is not a candy maker")
+         res.status(403).send("user is not a candy maker");
      }
 }; 
 

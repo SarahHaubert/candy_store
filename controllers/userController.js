@@ -10,6 +10,10 @@ const getUserById = (req, res) => {
     })
 };
 
+const newUserForm = (req, res) => {
+    //this would render a create a new user form for clerks 
+};
+
 const addUser = (req, res) => {
     const { name, type } = req.body;
     
@@ -47,5 +51,6 @@ module.exports = {
     getUserById,
     addUser,
     removeUser,
+    newUserForm
     
 }

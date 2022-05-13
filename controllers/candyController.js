@@ -1,5 +1,5 @@
 const pool = require('../db');
-const queries = require('../queries')
+const queries = require('../queries');
 
 
 const getCandy = (req, res) => {
@@ -15,6 +15,10 @@ const getCandyById = (req, res) => {
         if (error) throw error;
         res.status(200).json(results.rows);
     })
+};
+
+const newCandyForm = (req, res) => {
+    //this would render a new candy form for candy makers to use
 };
 
 const addCandy = (req, res) => {
@@ -70,4 +74,5 @@ module.exports = {
     addCandy,
     removeCandy,
     updateCandy,
+    newCandyForm
 }

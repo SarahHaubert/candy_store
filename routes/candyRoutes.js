@@ -6,6 +6,8 @@ const router = Router();
 
 router.get('/', controller.getCandy); 
 
+router.get('/new', makerAuth, controller.newCandyForm)
+
 router.post('/', makerAuth, controller.addCandy);
 
 router.get('/:id', controller.getCandyById); 

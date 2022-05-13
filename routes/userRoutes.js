@@ -5,17 +5,12 @@ const { clerkAuth } = require('../basicAuth');
 const router = Router();
 
 
+router.get('/new', clerkAuth, controller.newUserForm);
 
 router.post('/', clerkAuth, controller.addUser);
 
 router.get('/:id', controller.getUserById); 
 
-router.delete('/:id', controller.removeUser);
-
-//router.post('/login', passport.authenticate('local', {failureFlash: true, failureRedirect: '/login'}), controller.login); 
-
-
-  
-
+router.delete('/:id', clerkAuth, controller.removeUser);
 
 module.exports = router;
