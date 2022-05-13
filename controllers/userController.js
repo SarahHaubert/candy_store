@@ -1,5 +1,6 @@
 const pool = require('../db');
-const queries = require('../queries')
+const queries = require('../queries'); 
+ 
 
 const getUserById = (req, res) => {
     const id = parseInt(req.params.id);
@@ -14,7 +15,7 @@ const addUser = (req, res) => {
     
         pool.query(queries.addUser, [name, type], (error, results) => {
             if(error) throw error;
-            res.status(201).send("Candy created successfully!")
+            res.status(201).send("User created successfully!")
         }); 
     
     };
@@ -37,9 +38,14 @@ const removeUser = (req, res) =>  {
     })
 }
 
+
+
+
+
+
 module.exports = {
     getUserById,
     addUser,
     removeUser,
-
+    
 }

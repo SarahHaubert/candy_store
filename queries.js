@@ -9,6 +9,7 @@ const updateCandy = "UPDATE candy SET name = $1 WHERE id = $2";
 const getUserById = "SELECT * FROM users WHERE id = $1"; 
 const addUser = "INSERT INTO users (name, type) VALUES ($1, $2)"; 
 const removeUser = "DELETE FROM users WHERE id = $1";
+const findUser = "SELECT * FROM users WHERE name = $1";
 
 module.exports = {
     getCandy,
@@ -19,5 +20,6 @@ module.exports = {
     getUserById,
     addUser,
     removeUser,
+    findUser,
 
 };

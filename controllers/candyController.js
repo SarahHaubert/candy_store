@@ -20,6 +20,7 @@ const getCandyById = (req, res) => {
 const addCandy = (req, res) => {
     const { name, ingredients, cost } = req.body;
     
+        
         pool.query(queries.addCandy, [name, ingredients, cost], (error, results) => {
             if(error) throw error;
             res.status(201).send("Candy created successfully!")

@@ -1,11 +1,12 @@
 const { Router } = require('express');
-const controller = require('../controllers/candyController')
+const controller = require('../controllers/candyController'); 
+const { makerAuth } = require('../basicAuth')
 
 const router = Router();
 
 router.get('/', controller.getCandy); 
 
-router.post('/', controller.addCandy);
+router.post('/', makerAuth, controller.addCandy);
 
 router.get('/:id', controller.getCandyById); 
 
